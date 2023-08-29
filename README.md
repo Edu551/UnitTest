@@ -1,3 +1,3 @@
 # UnitTest
 
-Repository created for unit testing studies with C#
+Repository created for test studies in C#
