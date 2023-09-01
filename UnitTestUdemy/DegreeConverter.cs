@@ -15,7 +15,7 @@ namespace UnitTestUdemy
 
         public static double ToCelsius(double fahrenheit) 
         {
-            return (32 * fahrenheit - 32) * 5 / 9;
+            return (fahrenheit - 32) * (9 / 5);
         }
     }
 }

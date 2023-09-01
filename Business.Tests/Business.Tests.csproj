@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DegreeConverterTests.cs" />
+    <Compile Include="FizzBuzzTests.cs" />
     <Compile Include="SerialPortParserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
