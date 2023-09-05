@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DegreeConverter.cs" />
     <Compile Include="FizzBuzz.cs" />
+    <Compile Include="RomanNumeral.cs" />
     <Compile Include="SerialPortParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
