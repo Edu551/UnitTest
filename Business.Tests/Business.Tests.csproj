@@ -53,6 +53,7 @@
     <Compile Include="RomanNumeralTests.cs" />
     <Compile Include="SerialPortParserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StackClassTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
