@@ -9,7 +9,7 @@ namespace Algorithms_DataStruct_Lib
     public class Sorting
     {
         /// <summary>
-        /// Bubble Sort, "stable" sorting algorithm. The order of the same elements does not change.
+        /// Bubble Sort, "Stable" sorting algorithm. The order of the same elements does not change.
         /// </summary>
         /// <param name="array"></param>
         public static void BubbleSort(int[] array)
@@ -23,6 +23,26 @@ namespace Algorithms_DataStruct_Lib
                         Swap(array, i, i + 1);
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// Selection sort, "Unstable" sorting algorithm. The order of the same elements maybe change.
+        /// </summary>
+        /// <param name="array"></param>
+        public static void SelectionSort(int[] array)
+        {
+            for (int partIndex = array.Length-1; partIndex > 0; partIndex--)
+            {
+                int largestAt = 0;
+                for (int i = 1; i <= partIndex; i++)
+                {
+                    if (array[i] > array[largestAt])
+                    {
+                        largestAt = i;
+                    }
+                }
+                Swap(array, largestAt, partIndex);
             }
         }
 

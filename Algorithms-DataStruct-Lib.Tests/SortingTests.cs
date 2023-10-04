@@ -6,6 +6,7 @@ namespace Algorithms_DataStruct_Lib.Tests
     [TestFixture]
     public class SortingTests
     {
+        #region Test utils
         private int[][] Samples()
         {
             int[][] samples = new int[9][];
@@ -35,17 +36,24 @@ namespace Algorithms_DataStruct_Lib.Tests
         private void PrintOut(int[] array)
         {
             TestContext.WriteLine("-----TRACE-----\n");
-            foreach (var el in array)
+            foreach (var element in array)
             {
-                TestContext.Write(el + " ");
+                TestContext.Write(element + " ");
             }
             TestContext.WriteLine("\n----------------------\n");
         }
+        #endregion
 
         [Test]
         public void BubbleSort_ValidInput_SortedInput()
         {
             RunTestsForSortAlgorithm(Sorting.BubbleSort);
+        }
+
+        [Test]
+        public void SelectionSort_ValidInput_SortedOutput()
+        {
+            RunTestsForSortAlgorithm(Sorting.SelectionSort);
         }
     }
 }
