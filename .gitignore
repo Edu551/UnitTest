@@ -451,3 +451,13 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,visualstudiocode,windows,linux
+/Algorithms-Course/Data/8Kints.txt
+/Algorithms-Course/Data/16Kints.txt
+/Algorithms-Course/Data/leipzig1m.txt
+/Algorithms-Course/Data/leipzig100k.txt
+/Algorithms-Course/Data/leipzig300k.txt
+/Algorithms-Course/Data/tale.txt
+/Algorithms-Course/Data/tinyTale.txt
+/Algorithms-Course/Data/1Kints.txt
+/Algorithms-Course/Data/2Kints.txt
+/Algorithms-Course/Data/4Kints.txt
