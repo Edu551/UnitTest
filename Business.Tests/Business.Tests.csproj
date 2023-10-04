@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculatorTests.cs" />
     <Compile Include="DegreeConverterTests.cs" />
     <Compile Include="FizzBuzzTests.cs" />
     <Compile Include="RomanNumeralTests.cs" />

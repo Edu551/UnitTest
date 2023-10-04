@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculator.cs" />
     <Compile Include="DegreeConverter.cs" />
     <Compile Include="FizzBuzz.cs" />
     <Compile Include="RomanNumeral.cs" />
