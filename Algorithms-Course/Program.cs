@@ -9,9 +9,7 @@ namespace Algorithms_Course
         {
             Console.WriteLine("Hello, World!");
 
-            Console.WriteLine("Recursive = " + RecursiveFactorial(5));
-
-            Console.WriteLine(IterativeFactorial(5));
+            TestThreeSum();
 
             Console.ReadKey();
         }
@@ -40,17 +38,19 @@ namespace Algorithms_Course
 
         private static void TestThreeSum()
         {
-            //1 second for 1k
-            var ints = In.ReadInts("Data\\1kints.txt").ToArray();
+            //0:00:00,0036967 second for 16k QuickSort
+            var ints = In.ReadInts("Data\\16kints.txt").ToArray();
 
             var watch = new Stopwatch();
             watch.Start();
 
-            var triplets = ThreeSum.Count(ints);
+            Sorting.QuickSort(ints);
+
+            //var triplets = ThreeSum.Count(ints);
 
             watch.Stop();
 
-            Console.WriteLine($"The number of \"zero-sum\" triplets:{triplets}");
+            //Console.WriteLine($"The number of \"zero-sum\" triplets:{triplets}");
             Console.WriteLine($"Time taken:{watch.Elapsed:g}");
         }
     }
