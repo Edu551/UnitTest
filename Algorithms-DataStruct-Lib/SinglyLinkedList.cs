@@ -89,6 +89,6 @@ namespace Algorithms_DataStruct_Lib
             }
         }
 
-        private bool IsEmpty => Count == 0;
+        public bool IsEmpty => Count == 0;
     }
 }
