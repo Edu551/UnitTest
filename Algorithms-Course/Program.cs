@@ -9,9 +9,31 @@ namespace Algorithms_Course
         {
             Console.WriteLine("Hello, World!");
 
-            TestThreeSum();
+            NodeExamples();
 
             Console.ReadKey();
+        }
+
+        private static void NodeExamples()
+        {
+            Node first = new Node() { Value = 5 };
+            Node second = new Node() { Value = 1 };
+            Node third = new Node() { Value = 3 };
+
+            first.Next = second;
+            second.Next = third;
+
+            PrintOutLinkedList(first);
+        }
+
+        private static void PrintOutLinkedList(Node node)
+        {
+            while(node != null)
+            {
+                Console.WriteLine(node.Value);
+                node = node.Next;
+            }
+
         }
 
         private static int RecursiveFactorial(int n)
