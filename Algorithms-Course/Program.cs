@@ -16,9 +16,9 @@ namespace Algorithms_Course
 
         private static void NodeExamples()
         {
-            Node first = new Node() { Value = 5 };
-            Node second = new Node() { Value = 1 };
-            Node third = new Node() { Value = 3 };
+            var first = new Node<int>(5);
+            var second = new Node<int>(1);
+            var third = new Node<int>(3);
 
             first.Next = second;
             second.Next = third;
@@ -26,7 +26,7 @@ namespace Algorithms_Course
             PrintOutLinkedList(first);
         }
 
-        private static void PrintOutLinkedList(Node node)
+        private static void PrintOutLinkedList(Node<int> node)
         {
             while(node != null)
             {
