@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms_DataStruct_Lib
 {
-    public class SinglyLinkedList<T>
+    public class SinglyLinkedList<T> : IEnumerable<T>
     {
         public Node<T> Head { get; private set; }
         public Node<T> Tail { get; private set; }
@@ -87,6 +88,21 @@ namespace Algorithms_DataStruct_Lib
 
                 Count--;
             }
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            Node<T> current = Head;
+            while(current != null)
+            {
+                yield return current.Value;
+                current = current.Next;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
 
         public bool IsEmpty => Count == 0;

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 
 namespace Algorithms_DataStruct_Lib
 {
@@ -27,6 +22,9 @@ namespace Algorithms_DataStruct_Lib
 
         public T Peek()
         {
+            if (IsEmpty)
+                throw new InvalidOperationException();
+
             return _items[Count - 1];
         }
 
