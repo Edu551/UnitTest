@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 
 namespace Algorithms_DataStruct_Lib
 {
@@ -48,9 +43,9 @@ namespace Algorithms_DataStruct_Lib
                 Head = node;
             else
                 Tail.Next = node;
-            
+
             Tail = node;
-            
+
             Count++;
         }
 
@@ -68,7 +63,7 @@ namespace Algorithms_DataStruct_Lib
 
         public void RemoveLast()
         {
-            if (IsEmpty) 
+            if (IsEmpty)
                 throw new InvalidOperationException();
 
             if (Count == 1)
@@ -78,7 +73,7 @@ namespace Algorithms_DataStruct_Lib
             else
             {
                 var current = Head;
-                while(current.Next != Tail)
+                while (current.Next != Tail)
                 {
                     current = current.Next;
                 }
@@ -93,7 +88,7 @@ namespace Algorithms_DataStruct_Lib
         public IEnumerator<T> GetEnumerator()
         {
             Node<T> current = Head;
-            while(current != null)
+            while (current != null)
             {
                 yield return current.Value;
                 current = current.Next;
