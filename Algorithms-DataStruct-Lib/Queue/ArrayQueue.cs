@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 
-namespace Algorithms_DataStruct_Lib
+namespace Algorithms_DataStruct_Lib.Queue
 {
     public class ArrayQueue<T> : IEnumerable<T>
     {
@@ -31,7 +26,7 @@ namespace Algorithms_DataStruct_Lib
 
         public void Enqueue(T item)
         {
-            if(_queue.Length == _tail)
+            if (_queue.Length == _tail)
             {
                 T[] largerArray = new T[Count * 2];
                 Array.Copy(_queue, largerArray, Count);
@@ -46,9 +41,9 @@ namespace Algorithms_DataStruct_Lib
             if (IsEmpty)
                 throw new InvalidOperationException();
 
-            _queue[_head++] = default(T);
+            _queue[_head++] = default;
 
-            if(IsEmpty)
+            if (IsEmpty)
                 _head = _tail = 0;
         }
 

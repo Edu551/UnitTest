@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithms_DataStruct_Lib
+namespace Algorithms_DataStruct_Lib.Node
 {
     public class Node<T>
     {
@@ -12,8 +12,8 @@ namespace Algorithms_DataStruct_Lib
         public Node<T> Next { get; set; }
 
         public Node(T value)
-        { 
-            Value = value; 
+        {
+            Value = value;
         }
     }
 }

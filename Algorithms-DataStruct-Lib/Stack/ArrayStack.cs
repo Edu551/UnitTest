@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace Algorithms_DataStruct_Lib
+namespace Algorithms_DataStruct_Lib.Stack
 {
     public class ArrayStack<T> : IEnumerable<T>
     {
@@ -18,7 +18,7 @@ namespace Algorithms_DataStruct_Lib
         }
 
         public bool IsEmpty => Count == 0;
-        public int Count { get; private set; }        
+        public int Count { get; private set; }
 
         public T Peek()
         {
@@ -33,7 +33,7 @@ namespace Algorithms_DataStruct_Lib
             if (IsEmpty)
                 throw new InvalidOperationException();
 
-            _items[--Count] = default(T);
+            _items[--Count] = default;
         }
 
         public void Push(T item)
@@ -50,8 +50,8 @@ namespace Algorithms_DataStruct_Lib
         }
 
         public IEnumerator<T> GetEnumerator()
-        { 
-            for(int i = Count - 1; i >= 0; i--)
+        {
+            for (int i = Count - 1; i >= 0; i--)
             {
                 yield return _items[i];
             }

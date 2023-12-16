@@ -4,8 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Algorithms_DataStruct_Lib.Node;
 
-namespace Algorithms_DataStruct_Lib
+namespace Algorithms_DataStruct_Lib.List
 {
     public class DoublyLinkedList<T>
     {
@@ -50,7 +51,7 @@ namespace Algorithms_DataStruct_Lib
             if (IsEmpty)
                 throw new InvalidOperationException();
 
-            if(Count == 1)
+            if (Count == 1)
             {
                 Head = null;
                 Tail = null;

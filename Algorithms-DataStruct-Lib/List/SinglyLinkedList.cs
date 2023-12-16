@@ -1,6 +1,7 @@
 ﻿using System.Collections;
+using Algorithms_DataStruct_Lib.Node;
 
-namespace Algorithms_DataStruct_Lib
+namespace Algorithms_DataStruct_Lib.List
 {
     public class SinglyLinkedList<T> : IEnumerable<T>
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithms_DataStruct_Lib
+namespace Algorithms_DataStruct_Lib.Queue
 {
     public class CircularQueue<T> : IEnumerable<T>
     {
@@ -62,7 +62,7 @@ namespace Algorithms_DataStruct_Lib
             if (IsEmpty)
                 throw new InvalidOperationException();
 
-            _queue[_head++] = default(T);
+            _queue[_head++] = default;
 
             if (IsEmpty)
                 _head = _tail = 0;
