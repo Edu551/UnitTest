@@ -1,4 +1,6 @@
-﻿namespace Algorithms_DataStruct_Lib.SymbolTables
+﻿using Algorithms_DataStruct_Lib.Queue;
+
+namespace Algorithms_DataStruct_Lib.SymbolTables
 {
     public class BinarySearchSt<TKey, TValue>
     {
@@ -148,6 +150,91 @@
 
             _values = valuesTmp;
             _keys = keysTmp;
+        }
+
+        public TKey Min()
+        {
+            if (IsEmpty)
+                throw new InvalidOperationException("Table is empty.");
+
+            return _keys[0];
+        }
+
+        public TKey Max()
+        {
+            if (IsEmpty)
+                throw new InvalidOperationException("Table is empty.");
+
+            return _keys[Count - 1];
+        }
+
+        public void RemoveMin()
+        {
+            if (IsEmpty)
+                throw new InvalidOperationException("Table is empty.");
+
+            Remove(Min());
+        }
+
+        public void RemoveMax()
+        {
+            if (IsEmpty)
+                throw new InvalidOperationException("Table is empty.");
+
+            Remove(Max());
+        }
+
+        public TKey Select(int index)
+        {
+            if (index < 0 || index >= Count)
+                throw new ArgumentException("Index out of range.");
+
+            return _keys[index];
+        }
+
+        public TKey Ceiling(TKey key)
+        {
+            if (key == null)
+                throw new ArgumentNullException("key is null.");
+
+            int rank = Rank(key);
+            if (rank == Count)
+                return default(TKey);
+            else
+                return _keys[rank];
+        }
+
+        public TKey Floor(TKey key)
+        {
+            if (key == null)
+                throw new ArgumentNullException("key is null.");
+
+            int rank = Rank(key);
+
+            if (rank < Count && _comparer.Compare(_keys[rank], key) == 0)
+                return _keys[rank];
+            if (rank == 0)
+                return default(TKey);
+            else
+                return _keys[rank - 1];
+        }
+
+        public IEnumerable<TKey> Range(TKey left, TKey right)
+        {
+            var q = new LinkedQueue<TKey>();
+
+            int low = Rank(left);
+            int high = Rank(right);
+
+            for (int i = low; i < high; i++)
+            {
+                q.Enqueue(_keys[i]);
+            }
+
+            if (Contains(right))
+                q.Enqueue(_keys[Rank(right)]);
+
+            return q;
         }
     }
 }
