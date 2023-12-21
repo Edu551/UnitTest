@@ -1,5 +1,6 @@
 ﻿using Algorithms_DataStruct_Lib;
 using Algorithms_DataStruct_Lib.Node;
+using Algorithms_DataStruct_Lib.SymbolTables;
 using System.Diagnostics;
 
 namespace Algorithms_Course
@@ -11,19 +12,23 @@ namespace Algorithms_Course
             //Console.WriteLine("Hello, World!");
             //NodeExamples();
 
-            Queue<int> queue = new Queue<int>(18);
-            queue.Enqueue(1);
-            queue.Enqueue(2);
-            queue.Enqueue(3);
-            queue.Enqueue(4);
+            //Queue<int> queue = new Queue<int>(18);
+            //queue.Enqueue(1);
+            //queue.Enqueue(2);
+            //queue.Enqueue(3);
+            //queue.Enqueue(4);
 
-            Console.WriteLine($"Should print out 1: {queue.Peek()}");
+            //Console.WriteLine($"Should print out 1: {queue.Peek()}");
 
-            queue.Dequeue();
-            
-            Console.WriteLine($"Should print out 2: {queue.Peek()}");
-            Console.WriteLine($"Contains 3? {queue.Contains(3)}");
+            //queue.Dequeue();
 
+            //Console.WriteLine($"Should print out 2: {queue.Peek()}");
+            //Console.WriteLine($"Contains 3? {queue.Contains(3)}");
+
+            var prim = Prime.Sieve(10000);
+
+
+            Console.WriteLine(prim.LastOrDefault());
 
             Console.ReadKey();
         }
@@ -42,7 +47,7 @@ namespace Algorithms_Course
 
         private static void PrintOutLinkedList(Node<int> node)
         {
-            while(node != null)
+            while (node != null)
             {
                 Console.WriteLine(node.Value);
                 node = node.Next;
@@ -58,7 +63,7 @@ namespace Algorithms_Course
             return n * RecursiveFactorial(n - 1);
         }
 
-        private static int IterativeFactorial(int number) 
+        private static int IterativeFactorial(int number)
         {
             if (number == 0)
                 return 1;
@@ -167,7 +172,7 @@ namespace Algorithms_Course
         #endregion
 
     }
-    
+
     internal class CustomersComparer : IEqualityComparer<Person>
     {
         public bool Equals(Person x, Person y) => x.Age == y.Age && x.Name == y.Name;
