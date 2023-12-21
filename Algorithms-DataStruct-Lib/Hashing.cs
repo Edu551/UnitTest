@@ -15,13 +15,13 @@
 
         public override bool Equals(object obj)
         {
-            var number = obj as PhoneNumber;
-            if (number == null)
+            var phone = obj as PhoneNumber;
+            if (phone == null)
                 return false;
 
-            return string.Equals(AreaCode, number.AreaCode)
-                   && string.Equals(Exchange, number.Exchange)
-                   && string.Equals(Number, number.Number);
+            return string.Equals(AreaCode, phone.AreaCode)
+                   && string.Equals(Exchange, phone.Exchange)
+                   && string.Equals(Number, phone.Number);
         }
 
         public static bool operator ==(PhoneNumber left, PhoneNumber right)
